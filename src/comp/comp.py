@@ -59,19 +59,20 @@ print(e)
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
 # inclusive.
 print("Names and ages between 27 and 32:")
-possible_ages = ( 27, 28, 29, 30, 31)
-f = [human.age for human in humans if human.age in possible_ages]
+possible_ages = (27, 28, 29, 30, 31, 32)
+# if you surround (human.age and human.name) with parens, you can return a bunch
+# of different things at once
+f = [(human.age, human.name) for human in humans if human.age in possible_ages]
 print(f)
 
 # Write a list comprehension that creates a list of new Humans like the old
 # list, except with all the names uppercase and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names uppercase:")
-g = [(i.name.upper(), i.age +5) for i in humans ]
+g = [(i.name.upper(), i.age + 5) for i in humans]
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
-import math
 h = [math.sqrt(sr.age) for sr in humans]
 print(h)
